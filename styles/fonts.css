@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Kingthings Hand';
+    src: url('/assets/fonts/KingThings/KingthingsHandLight.woff2') format('woff2'),
+        url('/assets/fonts/KingThings/KingthingsHandLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kingthings Hand';
+    src: url('/assets/fonts/KingThings/KingthingsHand.woff2') format('woff2'),
+        url('/assets/fonts/KingThings/KingthingsHand.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}

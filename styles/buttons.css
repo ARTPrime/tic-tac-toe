@@ -1,0 +1,40 @@
+.button {
+    min-height: 40px;
+    min-width: 120px;
+    border: none;
+    border-radius: 32px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0 2rem;
+}
+
+.button-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.button-text {
+    background-color: transparent;
+}
+
+.button-text.button--dark {
+    color: #454A58;
+}
+
+.button-text.button--dark:hover {
+    border: 2px solid #454A58;
+}
+
+.button-primary {
+    color: white;
+}
+
+.button-primary.button--dark {
+    background-color: #454A58;
+}
+
+.button--medium {
+    width: 200px;
+    height: 54px;
+}

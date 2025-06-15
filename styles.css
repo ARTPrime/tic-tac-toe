@@ -1,0 +1,72 @@
+@import url("/styles/reset.css");
+@import url("/styles/fonts.css");
+@import url("/styles/buttons.css");
+@import url("/styles/navbar.css");
+
+html,
+body {
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #454A58;;
+}
+
+body {
+  background-color: white;
+}
+
+.app-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 96px);
+  padding: 0 176px;
+}
+
+.main-header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-header-action {
+  align-self: flex-end;
+}
+
+.main-header {
+  font-family: "Kingthings Hand", sans-serif;
+  font-size: 96px;
+  color: #e51a38;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  padding-top: 6rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-title {
+  font-size: 16px;
+  font-weight: 600;
+  
+}
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 88px 0 32px;
+}
+
+.article-header {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
