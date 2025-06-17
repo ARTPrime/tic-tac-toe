@@ -1,0 +1,42 @@
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+.input {
+    border: none;
+    border-radius: 16px;
+    background-color: var(--color-light);
+    height: 56px;
+    padding: 16px 32px;
+    outline-color: var(--color-dark);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+}
+
+.input-container-select {
+    position: relative;
+}
+
+.input-select {
+    width: 100%;
+}
+
+.input-select-icon {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 32px;
+    background-color: var(--color-light);
+    border-radius: 16px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.input-select-option {
+    height: 40px;
+    font-weight: 400;
+}
+
+

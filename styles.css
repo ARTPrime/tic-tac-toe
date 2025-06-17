@@ -2,13 +2,21 @@
 @import url("/styles/fonts.css");
 @import url("/styles/buttons.css");
 @import url("/styles/navbar.css");
+@import url("/styles/inputs.css");
+
+:root {
+  --color-dark: #454a58;
+  --color-success: #00CC66;
+  --color-light: #F7F7F9;
+  --box-shadow: 0 4px 4px rgba(82, 88, 106, 0.15);
+}
 
 html,
 body {
   height: 100%;
   font-family: "Poppins", sans-serif;
   font-size: 16px;
-  color: #454A58;;
+  color: var(--color-dark);
 }
 
 body {
@@ -49,16 +57,6 @@ body {
   padding-top: 6rem;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-title {
-  font-size: 16px;
-  font-weight: 600;
-  
-}
 .article {
   display: flex;
   flex-direction: column;
@@ -69,4 +67,34 @@ body {
 .article-header {
   font-size: 1.5rem;
   font-weight: 600;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px;
+  border: 1px solid #ececef;
+  border-radius: 16px;
+  box-shadow: var(--box-shadow);
+}
+
+.form-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.form-input-container {
+  margin-top: 32px;
+  display: flex;
+  gap: 16px;
+}
+
+.form-input-container .input-container {
+  width: 50%;
+}
+
+.form-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
 }

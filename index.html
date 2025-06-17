@@ -51,17 +51,39 @@
         </article>
         <form class="form">
           <h3 class="form-title">Player 1</h3>
-          <input class="input input-text" type="text" />
-          <div class="input-select-container">
-            <select class="input input-select">
-              <option value="1" class="input-select-option">Circle</option>
-              <option value="2" class="input-select-option">Cross</option>
-              <option value="3" class="input-select-option">Star</option>
-              <option value="4" class="input-select-option">Triangle</option>
-            </select>
-            <span class="input-select-icon"
-              ><i class="fa-solid fa-caret-down"></i
-            ></span>
+          <div class="form-input-container">
+            <div class="input-container">
+              <label class="input-label" for="userName">Name:*</label>
+              <input
+                class="input input-text"
+                type="text"
+                id="userName"
+                required
+              />
+            </div>
+            <div class="input-container">
+              <label for="symbol">Symbol:*</label>
+              <div class="input-container-select">
+                <select class="input input-select" id="symbol" required>
+                  <option value="1" class="input-select-option">Circle</option>
+                  <option value="2" class="input-select-option">Cross</option>
+                  <option value="3" class="input-select-option">Star</option>
+                  <option value="4" class="input-select-option">
+                    Triangle
+                  </option>
+                </select>
+                <span class="input-select-icon"
+                  ><i class="fa-solid fa-caret-down"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+          <div class="form-footer">
+            <button
+              class="button button-primary button--success button--medium"
+            >
+              Continue
+            </button>
           </div>
         </form>
       </div>

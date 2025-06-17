@@ -28,10 +28,15 @@
 
 .button-primary {
     color: white;
+    box-shadow: 0 4px 4px rgba(82, 88, 106, 0.10);
 }
 
 .button-primary.button--dark {
     background-color: #454A58;
+}
+
+.button-primary.button--success {
+    background-color: var(--color-success);
 }
 
 .button--medium {
