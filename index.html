@@ -58,6 +58,7 @@
                 class="input input-text"
                 type="text"
                 id="userName"
+                placeholder="Enter a name"
                 required
               />
             </div>
@@ -65,16 +66,22 @@
               <label for="symbol">Symbol:*</label>
               <div class="input-container-select">
                 <select class="input input-select" id="symbol" required>
-                  <option value="1" class="input-select-option">Circle</option>
-                  <option value="2" class="input-select-option">Cross</option>
-                  <option value="3" class="input-select-option">Star</option>
-                  <option value="4" class="input-select-option">
-                    Triangle
+                  <button>
+                    <selectedcontent></selectedcontent>
+                    <span class="picker"
+                      ><i class="fa-solid fa-caret-down"></i
+                    ></span>
+                  </button>
+                  <option value="1" class="input-select-option">
+                    <i class="fa-solid fa-circle-notch"></i><span>Circle</span>
+                  </option>
+                  <option value="2" class="input-select-option">
+                    <i class="fa-solid fa-xmark"></i><span>Cross</span>
+                  </option>
+                  <option value="3" class="input-select-option">
+                    <i class="fa-solid fa-star"></i><span>Star</span>
                   </option>
                 </select>
-                <span class="input-select-icon"
-                  ><i class="fa-solid fa-caret-down"></i
-                ></span>
               </div>
             </div>
           </div>
