@@ -39,6 +39,14 @@
     background-color: var(--color-success);
 }
 
+.button-primary.button--success:hover:not(:disabled) {
+    background-color: var(--color-success-hover);
+}
+
+.button-primary:disabled {
+    background-color: var(--color-disabled);
+}
+
 .button--medium {
     width: 200px;
     height: 54px;

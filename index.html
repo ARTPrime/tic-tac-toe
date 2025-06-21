@@ -50,7 +50,7 @@
             start proving your skills.
           </p>
         </article>
-        <form class="form">
+        <form class="form" id="form">
           <h3 class="form-title">Player 1</h3>
           <div class="form-input-container">
             <div class="input-container">
@@ -59,13 +59,14 @@
                 class="input input-text"
                 type="text"
                 id="userName"
-                required
+                autocomplete="off"
               />
+              <p class="input-error-message"></p>
             </div>
             <div class="input-container">
               <label for="symbol">Symbol:*</label>
               <div class="input-container-select">
-                <select class="input input-select" id="symbol" required>
+                <select class="input input-select" id="symbol">
                   <option value="1" class="input-select-option">
                     <i class="fa-regular fa-circle"></i> Circle
                   </option>
@@ -83,6 +84,7 @@
           </div>
           <div class="form-footer">
             <button
+              id="continue-button"
               class="button button-primary button--success button--medium"
             >
               Continue

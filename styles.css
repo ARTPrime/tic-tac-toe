@@ -7,7 +7,12 @@
 :root {
   --color-dark: #454a58;
   --color-success: #00CC66;
+  --color-success-hover: #02a855;
+  --color-danger: #E51A38;
   --color-light: #F7F7F9;
+  --color-disabled: #c5c5ce;
+  --color-input-invalid: #FDEDEF;
+  --color-input-success: #def7eb;
   --box-shadow: 0 4px 4px rgba(82, 88, 106, 0.15);
 }
 
