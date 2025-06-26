@@ -61,6 +61,14 @@
   margin-right: 2px;
 }
 
+.input-select.input--invalid + .input-select-icon {
+    background-color: var(--color-input-invalid);
+}
+
+.input-select.input--success + .input-select-icon {
+    background-color: var(--color-input-success);
+}
+
 .input-select-icon i {
   transition: rotate ease-in 0.1s;
 }
