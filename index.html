@@ -4,7 +4,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Tic-Tac-Toe</title>
         <link rel="shortcut icon" href="game.ico" type="image/x-icon" />
-        <link rel="stylesheet" href="styles.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -18,13 +17,16 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <link rel="stylesheet" href="styles.css" />
         <script type="module" src="scripts/tic-tac-toe.js" defer></script>
     </head>
     <body>
         <nav class="navbar">
             <div class="navbar-buttons">
                 <h1 class="navbar-logo">#tic</h1>
-                <a href="#" class="navbar-button navbar-button--active">Play</a>
+                <a href="index.html" class="navbar-button navbar-button--active"
+                    >Play</a
+                >
                 <a href="#" class="navbar-button">Rules</a>
                 <a href="#" class="navbar-button">About</a>
                 <a href="#" class="navbar-button">Contact</a>
@@ -38,13 +40,14 @@
                 <div class="main-header-container">
                     <h1 class="main-header">Start!</h1>
                     <button
+                        id="quick-game"
                         class="main-header-action button button--medium button-primary button--dark"
                     >
                         Quick game!
                     </button>
                 </div>
                 <article class="article">
-                    <h2 class="article-header">1. Register two players</h2>
+                    <h2 class="article-header">Register two players</h2>
                     <p class="article-text">
                         It takes two to play. Register 2 players with a name and
                         a symbol to start proving your skills.

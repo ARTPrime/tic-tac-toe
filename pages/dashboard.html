@@ -1,0 +1,58 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tic-Tac-Toe</title>
+        <link rel="shortcut icon" href="game.ico" type="image/x-icon" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="/styles.css" />
+        <script type="module" src="/scripts/dashboard.js" defer></script>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="navbar-buttons">
+                <h1 class="navbar-logo">#tic</h1>
+                <a
+                    href="/index.html"
+                    class="navbar-button navbar-button--active"
+                    >Play</a
+                >
+                <a href="#" class="navbar-button">Rules</a>
+                <a href="#" class="navbar-button">About</a>
+                <a href="#" class="navbar-button">Contact</a>
+            </div>
+            <a href="#" class="navbar-icon-link"
+                ><i class="fa-brands fa-github"></i
+            ></a>
+        </nav>
+        <main class="main-dashboard">
+            <div class="main-dashboard-content">
+                <div class="main-dashboard-header-container">
+                    <h1 class="main-header">Start!</h1>
+                </div>
+                <article class="article">
+                    <h2 class="article-header">It's Player 1 turn</h2>
+                </article>
+                <section class="dashboard">
+                    <button id="1"></button><button id="2"></button
+                    ><button id="3"></button><button id="4"></button
+                    ><button id="5"></button><button id="6"></button
+                    ><button id="7"></button><button id="8"></button
+                    ><button id="9"></button>
+                </section>
+            </div>
+        </main>
+    </body>
+</html>

@@ -2,6 +2,7 @@ import { updateArrayItemByPropertyName } from './functions.js';
 
 const userNameInput = document.querySelector('#userName');
 const continueButton = document.querySelector('#continue-button');
+const quickGame = document.querySelector('#quick-game')
 const symbolInput = document.querySelector('#symbol');
 const formTitle = document.querySelector('.form-title');
 const form = document.querySelector('#form');
@@ -26,10 +27,6 @@ userNameInput.addEventListener('input', () => {
     checkUserNameInputForErrors();
 });
 
-// Symbol input validation
-symbolInput.addEventListener('change', () => {
-    checkSymbolInputForDuplicateSelection();
-});
 
 // Checks form for changes and sets current player hasBeenSet property
 form.addEventListener('change', () => {
@@ -37,10 +34,16 @@ form.addEventListener('change', () => {
 
     currentPlayer = {
         ...currentPlayer,
-        hasBeenSet: true
-    }
+        hasBeenSet: true,
+    };
 
     players = updateArrayItemByPropertyName(players, currentPlayer);
+    checkSymbolInputForDuplicateSelection(registryStep);
+});
+
+// Quick Game button
+quickGame.addEventListener('click', () => {
+    window.location.href = './pages/dashboard.html';
 })
 
 // Set player data on continue click
@@ -54,32 +57,38 @@ continueButton.addEventListener('click', (e) => {
         symbol: symbolInput.value,
     };
     players = updateArrayItemByPropertyName(players, player);
-    registryStep++;
-    prepareFormForNextPlayer();
-    checkSymbolInputForDuplicateSelection();
-});
 
+    if (registryStep < 2) {
+        registryStep++;
+        prepareFormForNextPlayer(registryStep <= 2 ? registryStep : null);
+        return;
+    }
+
+    window.location.href = './pages/dashboard.html';
+});
 
 /**
  * Sets form default values for next player
  */
-function prepareFormForNextPlayer() {
-    const nextPlayer = players.find((item) => item.id === registryStep);
+function prepareFormForNextPlayer(nextPlayerId) {
+    if (nextPlayerId) {
+        const nextPlayer = players.find((item) => item.id === nextPlayerId);
 
-    userNameInput.value = '';
-    userNameInput.classList.remove('input--success');
-    symbolInput.classList.remove('input--success');
-    formTitle.innerHTML = nextPlayer.name;
-    symbolInput.value = nextPlayer.symbol;
+        userNameInput.value = '';
+        userNameInput.classList.remove('input--success');
+        symbolInput.classList.remove('input--success');
+        formTitle.innerHTML = nextPlayer.name;
+        symbolInput.value = nextPlayer.symbol;
+    }
 }
 
 /**
  * Checks symbol input for duplicate values
  */
-function checkSymbolInputForDuplicateSelection() {
-    const currentPlayer = players.find((item) => item.id === registryStep);
+function checkSymbolInputForDuplicateSelection(currentPlayerId) {
+    const currentPlayer = players.find((item) => item.id === currentPlayerId);
 
-    if (currentPlayer.hasBeenSet) {
+    if (currentPlayer && currentPlayer.hasBeenSet) {
         const symbolValue = symbolInput.value;
         const symbolInputParent = symbolInput.parentElement.parentElement;
         const isSymbolAlreadySelected = players
@@ -91,13 +100,18 @@ function checkSymbolInputForDuplicateSelection() {
 
         if (isSymbolAlreadySelected) {
             const inputErrorElement = document.createElement('p');
+            const inputErrorMessage = symbolInputParent.querySelector(
+                '.input-error-message'
+            );
 
             inputErrorElement.classList.add('input-error-message', 'show');
             symbolInput.classList.add('input--invalid');
             symbolInput.classList.remove('input--success');
             continueButton.setAttribute('disabled', true);
             inputErrorElement.innerHTML = 'This value is already selected';
-            symbolInputParent.appendChild(inputErrorElement);
+            if (!inputErrorMessage) {
+                symbolInputParent.appendChild(inputErrorElement);
+            }
         } else {
             const inputErrorMessage = symbolInputParent.querySelector(
                 '.input-error-message'
@@ -110,11 +124,11 @@ function checkSymbolInputForDuplicateSelection() {
                 inputErrorMessage.remove();
             }
         }
-        checkUserNameInputForErrors();
+        checkUserNameInputForErrors(isSymbolAlreadySelected);
     }
 }
 
-function checkUserNameInputForErrors() {
+function checkUserNameInputForErrors(hasSymbolError = false) {
     const inputErrorMessage = userNameInput.parentElement.querySelector(
         '.input-error-message'
     );
@@ -134,7 +148,7 @@ function checkUserNameInputForErrors() {
             ? { error: 'duplicated' }
             : null;
 
-    formTitle.innerHTML = inputValue;
+    formTitle.innerHTML = inputValue === '' ? 'Player 1' : inputValue;
     if (inputError) {
         userNameInput.classList.add('input--invalid');
         userNameInput.classList.remove('input--success');
@@ -153,7 +167,9 @@ function checkUserNameInputForErrors() {
     } else {
         userNameInput.classList.remove('input--invalid');
         userNameInput.classList.add('input--success');
-        continueButton.removeAttribute('disabled');
+        if (!hasSymbolError) {
+            continueButton.removeAttribute('disabled');
+        }
         inputErrorMessage.classList.remove('show');
         inputErrorMessage.innerHTML = '';
     }

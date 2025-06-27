@@ -3,6 +3,7 @@
 @import url("/styles/buttons.css");
 @import url("/styles/navbar.css");
 @import url("/styles/inputs.css");
+@import url("/styles/dashboard.css");
 
 :root {
   --color-dark: #454a58;
@@ -37,8 +38,6 @@ body {
 }
 
 .main-header-container {
-  min-width: 1088px;
-  max-width: 1440px;
   display: flex;
   justify-content: space-between;
 }
@@ -54,6 +53,8 @@ body {
 }
 
 .main-content {
+  min-width: 1088px;
+  max-width: 1440px;
   display: flex;
   flex-direction: column;
   height: fit-content;
